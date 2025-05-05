@@ -7,7 +7,7 @@ const MemberReview = () => {
       <h2>Member Reviews</h2>
       <button className="write-review">Write a Review</button>
       <div className="reviews">
-        <div className="review-card">John Smith - Great platform</div>
+        <div className="review-card">John Sabas - Great platform</div>
         <div className="review-card">Sarah Johnson - Highly recommend</div>
         <div className="review-card">David Brown - Helped me stay fit</div>
       </div>
