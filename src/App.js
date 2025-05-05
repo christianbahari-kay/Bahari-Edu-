@@ -20,7 +20,6 @@ import LoginPage from "./Components/Login/LoginPage";
 import SignUpPage from "./Auth/SignUpPage"; // pastikan ini ada
 import "./App.css";
 
-// Konten Aplikasi
 const AppContent = ({ isLoggedIn, setIsLoggedIn }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -68,7 +67,6 @@ const AppContent = ({ isLoggedIn, setIsLoggedIn }) => {
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Cek status login saat pertama kali render
   useEffect(() => {
     const status = localStorage.getItem("isLoggedIn") === "true";
     setIsLoggedIn(status);
