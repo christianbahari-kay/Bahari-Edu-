@@ -24,6 +24,7 @@ const Navbar = ({ setIsLoggedIn }) => {
           <li><Link to="/review">Review</Link></li>
           <li><Link to="/suggestion">Suggestion</Link></li>
           <button className="logout-button" onClick={handleLogout}>Logout</button>
+  
         </ul>
         
       </div>
