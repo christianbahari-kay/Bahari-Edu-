@@ -1,0 +1,22 @@
+body {
+  background: linear-gradient(to right, #7b2cbf, #3a0ca3); /* Latar belakang ungu */
+   /* Warna teks agar kontras */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.card {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px;
+}
