@@ -1,0 +1,148 @@
+/* Container */
+.subject-container {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(120deg, #a1c4fd, #c2e9fb); /* Warna biru pastel */
+    min-height: 20vh;
+  }
+  
+
+.subject-grid {
+  background: rgba(255, 255, 255, 0.6); /* Transparan putih */
+  backdrop-filter: blur(10px); /* Efek blur */
+  padding: 20px;
+  border-radius: 15px;
+}
+
+  
+  /* Judul */
+  .subject-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Kategori Tabs */
+  .category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #333;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tab-button:hover,
+  .tab-button.active {
+    background: #007bff;
+    color: white;
+    background: linear-gradient(135deg, #255bb3, #1c4356); /* Warna biru gradient */
+    transform: scale(1.05);
+    transform: translateY(-3px);
+  }
+  
+  /* Grid Pelajaran */
+  .subject-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Card Pelajaran */
+  .subject-card {
+    width: 200px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .subject-card:hover {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Warna biru gradient */
+    transform: scale(1.05);
+  }
+  
+  /* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Efek transparan hitam */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* Efek blur untuk lebih elegan */
+}
+
+/* Modal Box */
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animasi Modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Judul Modal */
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #333;
+}
+
+/* Isi Modal */
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Tombol Tutup */
+.close-button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-button:hover {
+  background: #d43f3f;
+}
+
+  

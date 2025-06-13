@@ -1,0 +1,61 @@
+/* Container utama review section */
+.review-section-container {
+    min-height: 100vh;
+    background: linear-gradient(to right, #7b2cbf, #3a0ca3);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Judul */
+  .review-section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 32px;
+  }
+  
+  /* Grid layout untuk review cards */
+  .review-section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1024px;
+  }
+  
+  /* Card review */
+  .review-section-card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+  
+  .review-section-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+  }
+  
+  /* Nama reviewer */
+  .review-section-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Komentar */
+  .review-section-comment {
+    color: #666;
+    margin-top: 8px;
+  }
+  
+  /* Rating */
+  .review-section-rating {
+    margin-top: 16px;
+    color: gold;
+    font-size: 20px;
+  }
+  

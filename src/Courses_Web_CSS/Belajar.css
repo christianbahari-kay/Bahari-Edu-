@@ -1,0 +1,94 @@
+/* === Latar Belakang yang Lebih Menarik === */
+.belajar-container {
+    display: flex;
+    flex-direction: column; /* Supaya title di atas */
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+
+ /* Gradasi lebih modern */
+}
+
+/* === Judul Besar yang Lebih Elegan === */
+.belajar-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* === Grid untuk Kursus agar Rapi === */
+.courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* === Kartu Kursus dengan Tampilan Premium === */
+.course-card {
+    width: 260px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    padding: 18px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* === Hover: Efek 3D dan Glow === */
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* === Gambar Kursus yang Proporsional === */
+.course-image {
+    width: 100%;
+    height: 170px;
+    object-fit: cover; /* Biar gambar tetap bagus */
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* === Hover: Gambar lebih hidup === */
+.course-card:hover .course-image {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+}
+
+/* === Judul Kursus yang Lebih Catchy === */
+.course-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 12px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* === Hover: Judul berubah warna === */
+.course-card:hover .course-title {
+    color: #007bff;
+}
+
+/* === Animasi Fade-in (Smooth) === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

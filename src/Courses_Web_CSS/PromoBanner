@@ -1,0 +1,52 @@
+.promo-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #dce6ff, #b3c7ff);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 90%;
+    position: relative;
+  }
+  
+  .promo-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .badge {
+    background: #ff4d4d;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  
+  .highlight {
+    color: #2b5ed9;
+  }
+  
+  .promo-button {
+    background: #2b5ed9;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .promo-button:hover {
+    background: #1e47b2;
+  }
+  
