@@ -1,30 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "../Courses_Web_CSS/ReviewSection.css";
 
-const reviews = [
-  {
-    name: "Ahmad Syahrul",
-    comment: "Aplikasi ini sangat membantu saya dalam belajar.",
-    rating: 5,
-  },
-  {
-    name: "Siti Nurhaliza",
-    comment: "Sangat bermanfaat! Semoga ada fitur tambahan di masa depan.",
-    rating: 4,
-  },
-  {
-    name: "Budi Santoso",
-    comment: "Desainnya menarik dan mudah digunakan.",
-    rating: 5,
-  },
-];
-
 const ReviewSection = () => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/reviews")
+      .then((res) => res.json())
+      .then((data) => setReviews(data))
+      .catch((err) => console.error("Gagal mengambil review:", err));
+  }, []);
+
   return (
     <div className="review-section-container">
       <h1 className="review-section-title">Review Pengguna</h1>
-      
+
       <div className="review-section-grid">
         {reviews.map((review, index) => (
           <motion.div
@@ -37,7 +28,7 @@ const ReviewSection = () => {
             <h2 className="review-section-name">{review.name}</h2>
             <p className="review-section-comment">{review.comment}</p>
             <div className="review-section-rating">
-              {"⭐".repeat(review.rating)}
+              {"⭐".repeat(review.rating || 5)} {/* default 5 jika kolom rating belum ada */}
             </div>
           </motion.div>
         ))}

@@ -6,46 +6,56 @@ const ReviewPage = () => {
   const [comment, setComment] = useState('');
   const [reviews, setReviews] = useState([]);
 
+  // Ambil review dari server
   useEffect(() => {
-    const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
-    setReviews(storedReviews);
+    fetch('http://localhost:5000/reviews')
+      .then(res => res.json())
+      .then(data => setReviews(data))
+      .catch(err => console.error('Gagal ambil review:', err));
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name.trim() || !comment.trim()) return alert('Please fill in all fields.');
+    if (!name.trim() || !comment.trim()) return alert('Mohon isi semua field');
 
-    const newReview = { name, comment };
-    const updatedReviews = [newReview, ...reviews];
-    setReviews(updatedReviews);
-    localStorage.setItem('reviews', JSON.stringify(updatedReviews));
+    const res = await fetch('http://localhost:5000/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name.trim(), comment: comment.trim() }),
+    });
 
-    setName('');
-    setComment('');
+    if (res.ok) {
+      const result = await res.json();
+      setReviews([{ name: result.name, comment: result.comment }, ...reviews]);
+      setName('');
+      setComment('');
+    } else {
+      alert('Gagal mengirim review');
+    }
   };
 
   return (
     <div className="review-page">
-      <h2>Share Your Thoughts</h2>
+      <h2>Bagikan Pendapatmu</h2>
       <form onSubmit={handleSubmit} className="review-form">
         <input
           type="text"
-          placeholder="Your name"
+          placeholder="Nama"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <textarea
-          placeholder="Your comment"
+          placeholder="Komentar"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        <button type="submit">Submit Review</button>
+        <button type="submit">Kirim Review</button>
       </form>
 
       <div className="submitted-reviews">
-        <h3>What others said:</h3>
+        <h3>Review Pengguna</h3>
         {reviews.length === 0 ? (
-          <p>No reviews yet.</p>
+          <p>Belum ada review.</p>
         ) : (
           reviews.map((review, idx) => (
             <div key={idx} className="submitted-review-card">

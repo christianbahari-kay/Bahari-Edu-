@@ -38,12 +38,23 @@ import QuizFisikaPage from "./Courses_Web/QuizFisikaPage";
 
 import ReviewSection from "./Courses_Web/ReviewSection";
 import ForumPage from "./Components/forum/ForumPage";
-import ThreadPage from "./Components/forum/ThreadePage";
 import CreateThread from "./Components/forum/CreateThread";
+import ThreadDetail from "./Components/forum/ThreadDetail";
 
 
+import ExerciseBiology from "./Components/Exercise/ExerciseBiology";
+import ExerciseChemistry from './Components/Exercise/ExerciseChemistry';
+import ExerciseGeography from "./Components/Exercise/ExerciseGeography";
+import ExerciseHistory from "./Components/Exercise/ExerciseHistory";
+import ExercisePhysics from "./Components/Exercise/ExercisePhysics";
+import ExerciseMath from "./Components/Exercise/ExerciseMath";
 
-
+import BiologyPage from "./Components/CourseFeature/FeatureBiologyPage"
+import ChemistryPage from "./Components/CourseFeature/ChemistryPage";
+import GeographyPage from "./Components/CourseFeature/GeographyPage";
+import HistoryPage from './Components/CourseFeature/HistoryPage';
+import MathematicsPage from './Components/CourseFeature/MathematicsPage';
+import PhysicsPage from './Components/CourseFeature/PhysicsPage';
 
 
 import "./App.css";
@@ -82,7 +93,6 @@ const AppContent = ({ isLoggedIn, setIsLoggedIn }) => {
         <Route path="/daftar" element={<SignUpPage setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/course" element={
           <>
-            <ProfilePage />
             <SubjectSelection />
             <Course />
             <FeaturedCourse />
@@ -100,6 +110,7 @@ const AppContent = ({ isLoggedIn, setIsLoggedIn }) => {
         <Route path="/review" element={
           <>
             <ReviewSection />
+            <MemberReview />
             <Footer />
           </>
         } />
@@ -111,17 +122,34 @@ const AppContent = ({ isLoggedIn, setIsLoggedIn }) => {
         <Route path="/quiz/:subjectId/:quizId" element={<QuizPage />} />
         <Route path="/quiz/persamaan" element={<QuizPersamaanPage />} />
         <Route path="/quiz/fisika/gerak" element={<QuizFisikaPage />} />
+        <Route path="/exercise/biology" element={<ExerciseBiology />} />
+        <Route path="/exercise/chemistry" element={<ExerciseChemistry />} />
+        <Route path="/exercise/geography" element={<ExerciseGeography />} />
+        <Route path="/exercise/history" element={<ExerciseHistory />} />
+        <Route path="/exercise/physics" element={<ExercisePhysics />} />  
+       <Route path="/exercise/mathematics" element={<ExerciseMath />} />
+
+        {/*Feature Page*/}
+        <Route path="/CourseFeature/biology" element={<BiologyPage />} />
+        <Route path="/CourseFeature/chemistry" element={<ChemistryPage />} />
+        <Route path="/CourseFeature/history" element={<HistoryPage />} />
+        <Route path="CourseFeature/geography" element={<GeographyPage />} />
+        <Route path="/CourseFeature/mathematics" element={<MathematicsPage />} />
+        <Route path="/CourseFeature/physics" element={<PhysicsPage />} />
         
+
 
 
         {/*Materi page*/}
         <Route path="/learning/:subjectId/:materiId" element={<LearningPage />} />
         <Route path="/subject/:subjectId/materi/:materialId" element={<LearningPage />} />
+        
 
+
+        {/*Forum Page*/}
         <Route path="/forum" element={<ForumPage />} />
-<Route path="/forum/new" element={<CreateThread />} />
-<Route path="/forum/thread/:id" element={<ThreadPage />} />
-
+        <Route path="/forum/new" element={<CreateThread />} />
+        <Route path="/forum/thread/:id" element={<ThreadDetail />} />
         
         <Route path="/review" element={<ReviewPage />} />
       </Routes>

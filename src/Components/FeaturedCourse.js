@@ -1,14 +1,15 @@
+// src/Components/FeaturedCourses.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import '../Styles/FeaturedCourses.css';
 
 const courses = [
-  { title: "Basic Biology", image: require('../Picture2/Biology.jpg') },
-  { title: "Basic Chemistry", image: require('../Picture2/Chem.jpg') },
-  { title: "Basic Geography", image: require('../Picture2/Geo.jpg') },
-  { title: "History of Civilization", image: require('../Picture2/History.jpg') },
-  { title: "Basic Mathematics", image: require('../Picture2/Math.jpg') },
-  { title: "Basic Physics", image: require('../Picture2/Physics.jpg') },
+  { title: "Basic Biology", image: require('../Picture2/Biology.jpg'), path: '/CourseFeature/biology' },
+  { title: "Basic Chemistry", image: require('../Picture2/Chem.jpg'), path: '/CourseFeature/chemistry' },
+  { title: "Basic Geography", image: require('../Picture2/Geo.jpg'), path: '/CourseFeature/Geography' },
+  { title: "History of Civilization", image: require('../Picture2/History.jpg'), path: '/CourseFeature/history' },
+  { title: "Basic Mathematics", image: require('../Picture2/Math.jpg'), path: '/CourseFeature/mathematics' },
+  { title: "Basic Physics", image: require('../Picture2/Physics.jpg'), path: '/CourseFeature/physics' },
 ];
 
 const FeaturedCourses = () => {
@@ -28,7 +29,7 @@ const FeaturedCourses = () => {
       <h2>Featured Courses</h2>
       <p>Explore our foundational learning materials</p>
 
-      <div className="slider-box"> {}
+      <div className="slider-box">
         <div className="slider-wrapper">
           {Array.from({ length: totalSlides }).map((_, slideIndex) => {
             const start = slideIndex * 3;
@@ -39,7 +40,12 @@ const FeaturedCourses = () => {
                 key={slideIndex}
               >
                 {visibleCourses.map((course, index) => (
-                  <div className="course-card" key={index}>
+                  <div
+                    className="course-card"
+                    key={index}
+                    onClick={() => navigate(course.path)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <img src={course.image} alt={course.title} />
                     <p>{course.title}</p>
                   </div>

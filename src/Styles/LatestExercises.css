@@ -98,3 +98,11 @@
 .explore-btn:hover {
   background-color: #333;
 }
+
+.clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.clickable:hover {
+  transform: scale(1.03);
+}

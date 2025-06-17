@@ -1,0 +1,64 @@
+/* ExercisePage.css */
+
+.exercise-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.exercise-page h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.exercise-page p {
+  font-size: 18px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: #555;
+}
+
+.exercise-section {
+  background-color: #f7faff;
+  border-left: 6px solid #3498db;
+  padding: 20px 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.exercise-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.exercise-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.exercise-section li {
+  background: #fff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.exercise-section li:hover {
+  background: #eaf4ff;
+}
+
+.correct {
+  color: #2ecc71;
+  font-weight: bold;
+}
